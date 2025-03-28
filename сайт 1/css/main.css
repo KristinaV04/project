@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; /* УСТАНОВИТЬ ЖИРНОСТЬ ШРИФТА*/
+    color: #fff;
+    font-size: 16px;
+}
+
+a{
+    text-decoration: none; /* УБРАТЬ НИЖНЕЕ ПОДЧЕРКИВАНИЕ У ССЫЛОК*/
+}
+
+img{
+    max-width: 100%; /* УСТАНОВИТЬ максимальную ширину для изображений*/
+}
+
+.wrapper{
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(45,24,1,1) 100%);
+    width: 100%;
+}
+
+.container{
+    width: 1400px;
+    margin: 0 auto;
+}
+
+header{
+    padding: 50px 0;
+}
+
+header .logo, footer .blocks .logotip{
+    text-transform: uppercase;
+    font-size: 29px;
+    font-weight: 800;
+}
+
+header nav {
+    float: right;
+    width: 50%;
+}
+
+header nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    position: relative;
+}
+
+header nav ul li{
+    display: inline-block;
+}
+
+header nav ul li a{
+    color: #fff;
+}
+
+header nav ul li.active::after{
+    content: '';
+    display: block;
+    width: 40px; /* Ширина*/
+    height: 5px;/* Высота*/
+    background: #DC7000;
+    border-radius: 10px; /* Все это делается чтобы сделать обводку на главной странице, на которой мы находимся*/
+    position: relative; /* Меняем позицию для этой обводки*/
+    top: 10px;/* Сдвигаем ее сверху */
+    left: -15px;/* Сдвигаем слева*/
+}
+
+header nav ul li:not(.active):not(.btn) a:hover{
+border-bottom: 5px solid; /* Задать как будет выглядеть обводка*/
+color: #DC7000; /* Делается обводка при наведении на текст при переходе на другую страницу*/
+}
+
+header nav ul li.btn a, .email .block button { /* Делается кнопка*/
+background: #FA9021; /* цвет кнопки*/
+padding: 9px 17px; /* отступы*/
+border-radius: 5px;/* закругления на кнопке*/
+transition: all 500ms ease; /* для плавногоизменения цвета нажатия*/
+}
+
+header nav ul li.btn a:hover, .email .block button:hover{
+    background: #b87228;
+}
+
+.hero{
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero--info{
+    width: 530px;
+    padding-top: 70px;
+    h2{
+        color: #E87D0E; 
+        font-size: 20px;
+        font-weight: 600;
+    }
+    h1{
+        
+        font-size: 50px;
+        font-weight: 600;
+    }
+    p{
+        font-weight: 500;
+        line-height: 170%;
+        margin: 30px 0;
+    }
+    .btn{
+        background: linear-gradient(90deg, rgba(250,131,5,1) 0%, rgba(251,158,60,1) 100%);
+        /* Цвет кнопки */
+        color: #fff; /* Цвет текста в кнопке*/
+        border-radius: 50px;
+        padding: 15px 30px;/* Отступы*/
+        border: 0;/* Убираем обводку у кнопки*/
+        transition: all 500ms ease;/* Плавная анимация при нажатии*/
+
+    }
+
+    .btn:hover{
+        cursor: pointer;/* Устанавливаем активный курсор*/
+        transform: scale(1.1);/* Увеличиваем размер кнопки на 10%*/
+    }
+}
+
+.hero img{
+    position: absolute;
+    top: -150px;
+    right: 0;
+}
+
+/* Секция с играми */
+
+.trending{
+    padding-top: 50px;
+}
+
+.trending h3 {
+    font-weight: 600; /* жирность заголовка h3 */
+    font-size: 31px; /* размер текста h3 */
+}
+
+.trending .see-all{ /* Кнопка  */
+    color: #fff; /* цвет текста в кнопке */
+    background: #25211D; /* фон кнопки */
+    border-radius: 5px; /* Закругление кнопки*/
+    padding: 12px 23px; /* Отступы*/
+    float: right; /* Расположение кнопки справа*/
+    display: block;
+    transition: all 500ms ease;/* Плавная анимация при нажатии*/
+}
+
+.trending .see-all:hover{ /* анимация кнопки */
+    transform: scale(1.1);/* Увеличиваем размер кнопки на 10%*/
+}
+
+.trending .games{
+    display: flex;
+    justify-content: space-between; /* Чтобы растянуть блок в ширину */
+    width: 100%; /* Ширина блока*/
+    padding: 50px 0;/* Отступы сверху и снизу*/
+}
+
+.trending .games span{
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+
+    img{
+        position: relative;
+        top: 5px;
+        margin-right: 7px;
+    }
+}
+
+.big-text{
+    padding: 50px 0px; /* Отступы*/
+    font-weight: 600; /* жирность заголовка */
+    font-size: 35px; /* размер текста */
+    text-align: center;
+    width: 800px;
+}
+
+.banner{
+    padding: 80px 0;
+    h3{
+        font-weight: 500; /* жирность заголовка */
+        font-size: 30px; /* размер текста */
+        margin-bottom: 30px;/* Отступы снизу*/
+    
+    } 
+    p{
+        line-height: 170%;
+        margin-bottom: 30px;
+        width: 550px;
+    }
+    img{
+        width: 100%;
+        margin-bottom: 30px;/* Отступы снизу*/
+    }
+}
+
+.freatures{
+    background: url('/img/Rectangle 5.png') no-repeat  center center fixed; /* Устонавливаем фон, указываем чтобы он не повторялся*/
+    background-size: cover; /* Устонавливаем чтобы фон растягивался*/
+    padding: 80px 0;
+    
+    h3{
+        margin-bottom: 20px;
+        text-align: center;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 30px; 
+    }
+    p{
+        margin-bottom: 20px;
+        text-align: center;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .info{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* Устонавливаем чтобы картинки могли переходить на новый ряд*/
+        
+        .block{
+            text-align: center;
+            width: 20%;
+            margin: 30px 2%;
+            
+            img{
+                margin-bottom: 15px;
+            }
+        }
+
+    }
+
+}
+/* Секции с проектами */
+
+.projects{
+    padding: 100px 0;
+
+    h3{
+        font-size: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+        max-width: 550px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    p{
+        text-align: center;
+        max-width: 550px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 100px;/* Отступы снизу*/
+    }
+    .images{
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 25px;
+    }
+    .see-all{ /* Кнопка  */
+        color: #fff; /* цвет текста в кнопке */
+        background: #25211D; /* фон кнопки */
+        border-radius: 5px; /* Закругление кнопки*/
+        padding: 12px 23px; /* Отступы*/
+        float: none; /* Расположение кнопки справа*/
+        display: block;
+        transition: all 500ms ease;/* Плавная анимация при нажатии*/
+        width: 70px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .see-all:hover{ /* анимация кнопки */
+        transform: scale(1.1);/* Увеличиваем размер кнопки на 10%*/
+    }
+}
+
+/* Секция с почтой */
+
+.email{
+    padding-bottom: 120px;
+
+    h3{
+        font-weight: 450; /* жирность заголовка */
+        font-size: 30px; /* размер текста */
+        margin-bottom: 30px;/* Отступы снизу*/
+        
+    }
+
+    p{
+        font-size: 16px;
+        line-height: 170%;
+        margin-bottom: 30px;
+        width: 550px;
+    }
+
+    .block{
+        background: #3b2d24;
+        margin-top: 30px;
+        border-radius: 10px;
+        padding: 40px 3%;
+        width: 94%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h4{
+            font-size: 30px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        p{
+            width: 500px;
+        }
+
+        input{ /* Делается для того чтобы кнопка назодилась внутри поля для ввода текста*/
+            background: #fff;
+            outline: none; /* Убирается подсветка при выборе поля*/
+            border: 0; /* Убирается обводка*/
+            border-radius: 5px;
+            width: 386px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400; /* Устанавливается шрифт в текстовом поле*/
+            padding: 20px 30px;
+            color: #3b2d24;
+            position: relative; /* Устанавливается чтобы вместить кнопку в текстовое поле*/
+            right: -100px;/* Двигаем вправо на -90px*/
+            z-index: 1;/* Устанавливаем позицию*/
+            padding-right: 100px;
+        }
+        input::placeholder {
+            color: #898989;
+        }
+       
+        button{
+            cursor: pointer;
+            border: 0;
+            padding: 13px 17px;
+            position: relative;/* Устанавливается чтобы вместить кнопку в текстовое поле*/
+            z-index: 2; /* Устанавливаем позицию*/
+            color: #fff;
+        }
+        
+    }
+}
+/*footer*/
+
+footer{
+    background: #000;
+    padding: 50px 0;
+
+    hr{
+        margin: 30px 0;
+        border: 0;
+        height: 0.6px;
+        background: #898989;
+    }
+
+    .blocks{
+        display: flex;
+        justify-content: space-between;
+        
+        p{
+            width: 300px;
+            margin: 15px 0;
+        }
+
+        h4{
+            font-weight: 500;
+            font-size: 17px;
+        }
+
+        ul{
+            list-style: none;
+            li{
+                margin-top: 7px;
+                opacity: 0.7;
+                
+            }
+        }
+    }
+}
+
+footer > p{
+    text-align: center;
+    font-size: 13px;
+    font-weight: 300;
+    margin: 40px 0;
+
+}
+
+
+
